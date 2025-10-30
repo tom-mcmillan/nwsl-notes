@@ -1,0 +1,31 @@
+name: Substack Drafts
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "docs/**.md"
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -r requirements-substack.txt
+      - run: python -m playwright install --with-deps
+      - name: Restore session
+        uses: actions/download-artifact@v4
+        with: { name: substack-session, path: .playwright }
+        continue-on-error: true
+      - name: Create drafts for changed docs
+        env:
+          SUBSTACK_SPACE: ${{ vars.SUBSTACK_SPACE }}
+        run: |
+          set -e
+          CHANGED=$(git diff --name-only HEAD^ HEAD | grep '^docs/.*\.md$' || true)
+          for f in $CHANGED; do
+            python tools/substack/publish_to_substack.py --space "$SUBSTACK_SPACE" --file "$f"
+          done
+      - name: Save session
+        uses: actions/upload-artifact@v4
+        with: { name: substack-session, path: .playwright/storage_state.json }

@@ -1,0 +1,28 @@
+---
+title: "{{ title }}"
+tags: [{% for t in tags %}{{ t }}{% if not loop.last %}, {% endif %}{% endfor %}]
+---
+
+# {{ title }}
+
+**Model:** `{{ model_id }}`  
+**Version:** `{{ version }}`  
+**Updated:** {{ updated }}
+
+## Summary
+{{ summary }}
+
+## Intended Use
+{{ intended_use }}
+
+## Training Data
+{{ training_data }}
+
+## Evaluation
+{{ evaluation }}
+
+## Limitations & Ethics
+{{ limitations }}
+
+## Changelog
+{{ changelog }}
