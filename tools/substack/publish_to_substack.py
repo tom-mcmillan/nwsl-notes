@@ -10,7 +10,10 @@ from markdown_it import MarkdownIt
 from playwright.async_api import Locator, Page, async_playwright
 from playwright.async_api import TimeoutError as PWTimeout
 
-from .logger import setup_logger
+try:
+    from tools.substack.logger import setup_logger
+except ImportError:
+    from logger import setup_logger
 
 logger = setup_logger(__name__)
 
