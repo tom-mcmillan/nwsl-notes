@@ -24,7 +24,7 @@ The NWSL MCP server implements this through 38 specialized tools organized into 
 ![Tool Categories](images/tool-categories.png)
 *The 38 MCP research tools organized by category, each providing objective measurements without storytelling bias.*
 
-But here's the crucial insight: these aren't just API endpoints with natural language wrappers. They're designed from the ground up to be conversational.l. When you query player metrics, the tool doesn't just return a table—it returns a standardized envelope containing the data, a human-readable summary, schema information, metadata about the query, and provenance linking back to the source tables. The response isn't just data; it's a complete answer to your question, packaged in a way that both humans and AI agents can understand.
+But here's the crucial insight: these aren't just API endpoints with natural language wrappers. They're designed from the ground up to be conversational. When you query player metrics, the tool doesn't just return a table—it returns a standardized envelope containing the data, a human-readable summary, schema information, metadata about the query, and provenance linking back to the source tables. The response isn't just data; it's a complete answer to your question, packaged in a way that both humans and AI agents can understand.
 
 ## The Architecture of Conversation
 
