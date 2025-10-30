@@ -14,7 +14,7 @@ plt.rcParams['font.family'] = 'sans-serif'
 plt.rcParams['font.sans-serif'] = ['Arial', 'Helvetica', 'DejaVu Sans']
 plt.rcParams['font.size'] = 10
 
-def create_mcp_architecture_diagram():
+def create_mcp_architecture_diagram() -> None:
     """Create MCP architecture diagram showing layers."""
     fig, ax = plt.subplots(figsize=(12, 10))
     ax.set_xlim(0, 10)
@@ -109,7 +109,7 @@ def create_mcp_architecture_diagram():
     print("✓ Created: mcp-architecture.png")
     plt.close()
 
-def create_tool_categories_visualization():
+def create_tool_categories_visualization() -> None:
     """Create visualization of 38 tools organized by category."""
     fig, ax = plt.subplots(figsize=(14, 10))
     ax.set_xlim(0, 14)
@@ -187,7 +187,7 @@ def create_tool_categories_visualization():
     print("✓ Created: tool-categories.png")
     plt.close()
 
-def create_envelope_structure_diagram():
+def create_envelope_structure_diagram() -> None:
     """Create annotated diagram of the envelope response structure."""
     fig, ax = plt.subplots(figsize=(12, 10))
     ax.set_xlim(0, 12)
@@ -264,7 +264,7 @@ def create_envelope_structure_diagram():
     print("✓ Created: envelope-structure.png")
     plt.close()
 
-def create_code_generation_example():
+def create_code_generation_example() -> None:
     """Create visualization of natural language to code generation."""
     fig, ax = plt.subplots(figsize=(12, 8))
     ax.set_xlim(0, 12)
